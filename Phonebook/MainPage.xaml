@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Phonebook.MainPage"
+             Title="Contacts">
+
+    <Grid Padding="5"
+          RowSpacing="5"
+          ColumnSpacing="2"
+          RowDefinitions="*,Auto">
+        <ScrollView>
+            <ListView x:Name="contactList"
+                      BackgroundColor="Transparent"
+                      ItemSelected="contacts_itemSelected"
+                      ItemTapped="contacts_itemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!-- <Grid Padding="10">
+                            <Frame HeightRequest="60"
+                                   Padding="0">
+                                
+                                <Grid Padding="20" ColumnDefinitions="20,Auto">
+                                    <Image Aspect="AspectFill"
+                                           Source="profile_icon.png"
+                                           HeightRequest="25"
+                                           WidthRequest="25"/>
+                                    <VerticalStackLayout
+                                        Margin="10,0,0,0"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        Grid.Column="1">
+                                        <Label>
+                                            <Label.Text>
+                                                <MultiBinding StringFormat="{}{0} {1}">
+                                                    <Binding Path="FirstName"/>
+                                                    <Binding Path="LastName"/>
+                                                </MultiBinding>
+                                            </Label.Text>
+                                        </Label>
+                                    </VerticalStackLayout>
+                                </Grid> 
+                            
+                            </Frame>
+
+                        </Grid> -->
+
+                        <!-- <Label>
+                            <Label.Text>
+                                <MultiBinding StringFormat="{}{0} {1}">
+                                    <Binding Path="FirstName"/>
+                                    <Binding Path="LastName"/>
+                                </MultiBinding>
+                            </Label.Text>
+                        </Label> -->
+                        <ViewCell>
+                            <ViewCell.View>
+
+                                <Grid HeightRequest="80"
+                                    ColumnDefinitions="70,Auto">
+
+                                    <Image Source="profile_icon.png"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Center"
+                                           HeightRequest="35"
+                                           WidthRequest="50"
+                                           Grid.RowSpan="2"/>
+                                    <Grid Grid.Column="1"
+                                          RowDefinitions="*,*"
+                                          RowSpacing="1"
+                                          Padding="10,0,0,0"
+                                          VerticalOptions="Center">
+                                        <Label VerticalOptions="Center">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span FontSize="14"
+                                                          Text="{Binding FirstName}"/>
+                                                    <Span Text=" "/>
+                                                    <Span FontSize="14"
+                                                          Text="{Binding LastName}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Label Grid.Row="1"
+                                               Padding="0,2,2,0"
+                                               Grid.Column="1"
+                                               Text="{Binding PhoneNumber}"
+                                               TextColor="Crimson"
+                                               FontSize="12"/>
+                                    </Grid>
+
+                                </Grid>
+                            </ViewCell.View>
+
+
+
+                        </ViewCell>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+
+
+        <Button Text="Create Contact"
+                Grid.Row="1"
+                Clicked="OnCreateContactButtonClicked"/>
+    </Grid>
+
+
+
+</ContentPage>
