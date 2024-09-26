@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Phonebook.EditContactPage"
+             Title="Edit Contact">
+    <Grid Padding="5"
+          RowSpacing="5"
+          ColumnSpacing="2"
+          RowDefinitions="*,*"
+          Margin="10,10,10,0">
+        <VerticalStackLayout Spacing="10">
+
+
+            <HorizontalStackLayout Padding="10,2,10,2">
+                <Label Text="First Name"
+                       WidthRequest="120"
+                       VerticalOptions="Center"/>
+                <Entry x:Name="fn"
+                       MinimumWidthRequest="200"
+                       Placeholder="Enter first name"/>
+            </HorizontalStackLayout>
+
+
+            <HorizontalStackLayout Padding="10,2,10,2">
+                <Label Text="Last Name"
+                       WidthRequest="120"
+                       VerticalOptions="Center"/>
+                <Entry x:Name="ln"
+                       MinimumWidthRequest="200"
+                       Placeholder="Enter last name"/>
+            </HorizontalStackLayout>
+
+
+            <HorizontalStackLayout Padding="10,2,10,2">
+                <Label Text="Email"
+                       WidthRequest="120"
+                       VerticalOptions="Center"/>
+                <Entry x:Name="email"
+                       MinimumWidthRequest="200"
+                       Placeholder="Enter email"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Padding="10,2,10,2">
+                <Label Text="Company Name"
+                       WidthRequest="120"
+                       VerticalOptions="Center"/>
+                <Entry x:Name="companyName"
+                       MinimumWidthRequest="200"
+                       Placeholder="Enter company name"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Padding="10,2,10,2">
+                <Label Text="Phone Number"
+                       WidthRequest="120"
+                       VerticalOptions="Center"/>
+                <Entry x:Name="phoneNumber"
+                       MinimumWidthRequest="200"
+                       Placeholder="Enter phone number"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="10"
+                    Padding="10,2,10,2" Grid.Row="1">
+                <Button x:Name="btnUpdate"
+                        Text="Update"
+                        Clicked="OnUpdateButtonClicked"/>
+                <Button x:Name="btnDelete"
+                        Text="Delete"
+                        Clicked="OnDeleteButtonClicked"/>
+                <Button x:Name="btnCancel"
+                        Text="Cancel"
+                        Clicked="OnCancelButtonClicked"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </Grid>
+ 
+</ContentPage>
